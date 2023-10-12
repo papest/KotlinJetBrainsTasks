@@ -1,0 +1,3 @@
+class FinalPublicField {
+    val name = ""
+}
