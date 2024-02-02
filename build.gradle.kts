@@ -1,7 +1,9 @@
 
 plugins {
-    kotlin("jvm") version "1.6.10"
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.6.10"
+    kotlin("jvm") version "1.6.20"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.6.10" apply true
+    id("org.jetbrains.kotlin.plugin.atomicfu") version "1.6.20" apply true
+
 }
 
 group = "me.peia"
@@ -13,7 +15,8 @@ repositories {
         url = uri("https://plugins.gradle.org/m2/")
     }
 }
-
+apply(plugin = "org.jetbrains.kotlin.plugin.serialization" )
+apply(plugin= "kotlinx-atomicfu")
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
@@ -21,9 +24,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.8.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/atomicfu
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/atomicfu
+    implementation("org.jetbrains.kotlinx:atomicfu:0.16.2")
     testImplementation(kotlin("test"))
 }
-apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
+
 
 tasks.test {
     useJUnitPlatform()
