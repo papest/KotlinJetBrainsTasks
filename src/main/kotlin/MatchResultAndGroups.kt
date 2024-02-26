@@ -1,5 +1,3 @@
-package newanimals
-
 import java.time.LocalTime
 
 fun printGroups(matchResult: MatchResult?) {
