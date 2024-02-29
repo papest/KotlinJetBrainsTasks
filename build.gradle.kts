@@ -18,7 +18,7 @@ repositories {
 apply(plugin = "org.jetbrains.kotlin.plugin.serialization" )
 apply(plugin= "kotlinx-atomicfu")
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
     implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.5")
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.8.1")
