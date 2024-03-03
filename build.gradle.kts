@@ -24,9 +24,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-html:0.8.1")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/atomicfu
-    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/atomicfu
     implementation("org.jetbrains.kotlinx:atomicfu:0.16.2")
+    // https://mvnrepository.com/artifact/rome/rome
+    implementation("rome:rome:0.9")
     testImplementation(kotlin("test"))
 }
 
