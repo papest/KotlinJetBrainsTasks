@@ -27,6 +27,13 @@ dependencies {
     implementation("org.jetbrains.kotlinx:atomicfu:0.16.2")
     // https://mvnrepository.com/artifact/rome/rome
     implementation("rome:rome:0.9")
+    // https://mvnrepository.com/artifact/org.jetbrains.exposed/exposed-core
+    implementation("org.jetbrains.exposed:exposed-core:0.38.2")
+    implementation("org.jetbrains.exposed:exposed-dao:0.38.2")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.38.2")
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation("com.h2database:h2:2.2.220")
+
     testImplementation(kotlin("test"))
 }
 
