@@ -8,7 +8,8 @@ fun main() = runBlocking(Dispatchers.Default) {
     val mainJob = launch (Dispatchers.IO) {
         val data = loadData1()
 
-        launch (Dispatchers.Default) { printData(data)}
+       val job = launch (Dispatchers.Default) { printData(data)}
+        job.join()
         storeData(data)
     }
     mainJob.join()
