@@ -1,6 +1,6 @@
-import com.sun.syndication.feed.synd.SyndEntryImpl
-import com.sun.syndication.io.SyndFeedInput
-import com.sun.syndication.io.XmlReader
+import com.rometools.rome.feed.synd.SyndEntryImpl
+import com.rometools.rome.io.SyndFeedInput
+import com.rometools.rome.io.XmlReader
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
