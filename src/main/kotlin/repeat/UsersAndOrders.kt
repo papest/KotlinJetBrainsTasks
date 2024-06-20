@@ -1,11 +1,11 @@
 package repeat
 
-import Orders.entityId
-import initDatabase
+import Books.entityId
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.dao.id.IntIdTable
+import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 
@@ -38,15 +38,19 @@ class Order(id: EntityID<Int>) : IntEntity(id) {
 
 }
 
+fun initDatabase() {
+    Database.connect("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;", driver = "org.h2.Driver")
+}
+
 fun main() {
     initDatabase()
     transaction {
         SchemaUtils.create(Users)
         SchemaUtils.create(Orders)
-        val user1 = User.new { name = "Kathy"}
+        val user1 = User.new { name = "Kathy" }
         println(user1)
-        Order.new { user = user1}
-        Order.new { user = user1}
+        Order.new { user = user1 }
+        Order.new { user = user1 }
         val orders = user1
             .orders
             .toList()
@@ -61,6 +65,6 @@ fun main() {
         println(User[1].orders.toList())
         User.forEntityIds(listOf(user1.id))
             .toList()
-            .forEach {println(it.orders.toList())}
+            .forEach { println(it.orders.toList()) }
     }
 }
